@@ -30,7 +30,7 @@ RSpec.describe User, type: :model do
       it 'emailは＠が含まれていないとできない' do
         @user.email = 'test.com'
         @user.valid?
-        expect(@user.errors.full_messages).to include("Email is invalid")
+        expect(@user.errors.full_messages).to include("Email には＠を含んでください")
       end
       it '重複したemailがある場合はできない' do
         @user.save
