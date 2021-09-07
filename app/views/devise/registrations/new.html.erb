@@ -46,6 +46,15 @@
     </div>
     <%= f.text_area :user_text, class:"input-default", id:"user-messages", placeholder:"ひとこと", maxlength:"140" %>
   </div>
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">アイコン画像</label>
+    </div>
+    <div class="user-image-btn">
+      <%= f.file_field :image, id:"user-image", class:"user-image" %>
+      <p class='info-text'>※あとから設定することもできます</p>
+    </div>
+  </div>
 
   <div class="form-group">
     <h2 class='form-bottom-text'>

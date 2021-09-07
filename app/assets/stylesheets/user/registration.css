@@ -16,7 +16,6 @@
   justify-content: center;
 }
 
-/* form-wrapは商品購入画面でも使用しています */
 .form-wrap {
   width: 50%;
   background-color: white;
@@ -120,3 +119,10 @@
   text-align: right;
   cursor: pointer;
 }
+
+.user-image-btn {
+  margin-top: 5px;
+  font-family: "Tsukushi B Round Gothic","筑紫B丸ゴシック";
+}
+
+/* アイコン画像のボタンを変えられるか調べる */
