@@ -1,0 +1,66 @@
+<%= render "shared/second-header" %>
+
+<%= form_with(model: @page, local: true ) do |f| %>
+  <%# pageテーブル保存したい %>
+  <div class="field">
+    <%= f.text_field :page_title, class:"input-default", id:"page-name", placeholder:"ページタイトルは？", maxlength:"40" %>
+  </div>
+  <div class="field">
+    <%= f.text_field :page_comment, class:"input-default", id:"page-comment", placeholder:"どんなコースかひとことでどうぞ！", maxlength:"40" %>
+  </div>
+
+  
+  <%# ページの上部右に表示したい %>
+  <%# <div class="page-contents-right">
+    <div class="page_author">
+      <div class="author-image">
+        <% if @user.image.attached? %>
+          <%# <%= image_tag @user.image, class:"user-image" %>
+        <%# <% else %>
+          <%# <%= image_tag "shark.png", class:"user-image" %>
+        <%# <% end %>
+      <%# </div> %>
+      <%# <h3 class="author-name"> %>
+        <%# <%= @user.nickname %>
+      <%# </h3> %>
+      <%# <div class="author-text"> %>
+        <%# <%= @user.user_text %>
+      <%# </div> %>
+    <%# </div> %>
+  <%# </div> %>
+  <%# ページの上部右に表示したい %>
+  <%# pageテーブル保存したい %>
+  <%# ページ上部 %>
+
+  <%# ページのメイン部分 %>
+  <div class='spot-form'>
+    <h1 class='info-input-headline'>
+      コース
+    </h1>
+
+    <%# spotテーブル %>
+    <div id="spots">
+      <%= f.fields_for :spots do |spot| %>
+        <%= render 'pages/page_spot_fields', f: spot %>
+        <div id="detail-association-insertion-point"></div>
+
+        <div class="addNewSpot" id="addNewSpot">
+          <%= link_to_add_association "スポット追加", f, :spots,
+            partial: 'pages/page_spot_fields',
+            class:"btn btn-default",
+            data: {
+              association_insertion_node: '#detail-association-insertion-point',
+              association_insertion_method: 'after'
+            }
+          %>
+        </div>
+      <% end %>
+    </div>
+    <%# spotテーブル %>
+  
+
+
+    <%# 送信ボタン %>
+  <%= f.submit "Send" %>
+<% end %>
+    <%# 送信ボタン %>
