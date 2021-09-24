@@ -1,45 +1,50 @@
-<%= render "shared/second-header" %>
+<div class="page-spots-contents">
+  <header class="page-spots-header">
+    <%= link_to image_tag('tyorippu_logo.png', size: '100x80'), root_path %>
+  </header>
+  <div class="page-spots-main">
+    <h2 class="page-spots-title">コースを記録</h2>
+    <%= form_with(model: @page, local: true ) do |f| %>
+      <%# pageテーブル保存したい %>
+      <div class="field">
+        <%= f.text_field :page_title, class:"input-default", id:"page-name", placeholder:"ページタイトルは？", maxlength:"40" %>
+      </div>
+      <div class="field">
+        <%= f.text_field :page_comment, class:"input-default", id:"page-comment", placeholder:"どんなコースかひとことでどうぞ！", maxlength:"40" %>
+      </div>
+      <%# pageテーブル保存したい %>
 
-<%= form_with(model: @page, local: true ) do |f| %>
-  <%# pageテーブル保存したい %>
-  <div class="field">
-    <%= f.text_field :page_title, class:"input-default", id:"page-name", placeholder:"ページタイトルは？", maxlength:"40" %>
-  </div>
-  <div class="field">
-    <%= f.text_field :page_comment, class:"input-default", id:"page-comment", placeholder:"どんなコースかひとことでどうぞ！", maxlength:"40" %>
-  </div>
-  <%# pageテーブル保存したい %>
+      <%# ページのメイン部分 %>
+      <div class='spot-form'>
+        <h1 class='info-input-headline'>
+          コース
+        </h1>
 
-  <%# ページのメイン部分 %>
-  <div class='spot-form'>
-    <h1 class='info-input-headline'>
-      コース
-    </h1>
+        <%# spotテーブル %>
+        <div id="spots">
+          <%= f.fields_for :spots do |spot| %>
+            <%= render 'pages/page_spot_fields', f: spot %>
+            <div id="detail-association-insertion-point"></div>
 
-    <%# spotテーブル %>
-    <div id="spots">
-      <%= f.fields_for :spots do |spot| %>
-        <%= render 'pages/page_spot_fields', f: spot %>
-        <div id="detail-association-insertion-point"></div>
-
-        <div class="addNewSpot" id="addNewSpot">
-          <%= link_to_add_association "スポット追加", f, :spots,
-            partial: 'pages/page_spot_fields',
-            class:"btn btn-default",
-            data: {
-              association_insertion_node: '#detail-association-insertion-point',
-              association_insertion_method: 'after'
-            }
-          %>
+            <div class="addNewSpot" id="addNewSpot">
+              <%= link_to_add_association "スポット追加", f, :spots,
+                partial: 'pages/page_spot_fields',
+                class:"btn btn-default",
+                data: {
+                  association_insertion_node: '#detail-association-insertion-point',
+                  association_insertion_method: 'after'
+                }
+              %>
+            </div>
+          <% end %>
         </div>
-      <% end %>
-    </div>
-    <%# spotテーブル %>
-  
+        <%# spotテーブル %>
+      
 
 
-    <%# 送信ボタン %>
-  <%= f.submit "Send" %>
-<% end %>
-    <%# 送信ボタン %>
-  <%# ページのメイン部分 %>
+        <%# 送信ボタン %>
+        <%= f.submit "Send", class:"submit-send-btn" %>
+    <% end %>
+        <%# 送信ボタン %>
+      <%# ページのメイン部分 %>
+</div>

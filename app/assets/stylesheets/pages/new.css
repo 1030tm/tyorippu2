@@ -1,0 +1,28 @@
+.page-spots-contents {
+  border: 3px solid #a0d8ef;
+  width: 60%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: auto auto;
+  font-family: 'TsukuARdGothic-Regular';
+}
+.input-default {
+  box-shadow: 1px 1px 1px inset rgba(0,0,0,0.2);
+}
+
+/* sendボタン */
+.submit-send-btn {
+  width: 100px;
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 5px 11px 5px 15px;
+  text-decoration: none;
+  color: #67c5ff;
+  transition: .4s;
+  background-color: #fff;
+  border: 2px solid #67c5ff;
+  margin: 5px auto;
+}
+
