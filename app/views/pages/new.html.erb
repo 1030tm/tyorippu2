@@ -24,24 +24,21 @@
         <div id="spots">
           <%= f.fields_for :spots do |spot| %>
             <%= render 'pages/page_spot_fields', f: spot %>
-            <div id="detail-association-insertion-point"></div>
 
-            <div class="addNewSpot" id="addNewSpot">
-              <%= link_to_add_association "スポット追加", f, :spots,
-                partial: 'pages/page_spot_fields',
-                class:"btn btn-default",
-                data: {
-                  association_insertion_node: '#detail-association-insertion-point',
-                  association_insertion_method: 'after'
-                }
-              %>
-            </div>
+            <div id="detail-association-insertion-point"></div>
           <% end %>
+
+            <%= link_to_add_association "スポット追加", f, :spots,
+              partial: 'pages/page_spot_fields',
+              class:"btn btn-default",
+              data: {
+                association_insertion_node: '#detail-association-insertion-point',
+                association_insertion_method: 'after'
+              }
+            %>
         </div>
         <%# spotテーブル %>
       
-
-
         <%# 送信ボタン %>
         <%= f.submit "Send", class:"submit-send-btn" %>
     <% end %>
