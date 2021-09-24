@@ -4,4 +4,6 @@ class Page < ApplicationRecord
   accepts_nested_attributes_for :spots, allow_destroy: true, reject_if: :all_blank
 
   validates :page_title, presence: true
+  
+  validates_associated :spots
 end

@@ -11,8 +11,8 @@
   </div>
   <div class="field">
     <%= f.label :spot_parking, "駐車場：" %>
+    <%= f.radio_button :spot_parking, "なし", checked: true %>なし
     <%= f.radio_button :spot_parking, "あり" %>あり
-    <%= f.radio_button :spot_parking, "なし" %>なし
     <%= f.radio_button :spot_parking, "近隣に有料あり" %>近隣に有料あり
   </div>
   <div class="field">
