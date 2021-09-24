@@ -5,6 +5,7 @@
   <div class="page-spots-main">
     <h2 class="page-spots-title">コースを記録</h2>
     <%= form_with(model: @page, local: true ) do |f| %>
+      <%= render 'shared/error_messages', model: f.object %>
       <%# pageテーブル保存したい %>
       <div class="field">
         <%= f.text_field :page_title, class:"input-default", id:"page-name", placeholder:"ページタイトルは？", maxlength:"40" %>
