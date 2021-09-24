@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
 
   def index
-    @pages = Page.all_blank
+    @pages = Page.all
   end
 
   def new
