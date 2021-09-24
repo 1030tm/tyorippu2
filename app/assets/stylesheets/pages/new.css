@@ -6,9 +6,26 @@
   flex-direction: column;
   margin: auto auto;
   font-family: 'TsukuARdGothic-Regular';
+  color: #808080;
 }
 .input-default {
   box-shadow: 1px 1px 1px inset rgba(0,0,0,0.2);
+}
+
+.page-spots-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.caution {
+  color: red;
+  border-bottom: 1px solid lightcoral;
+}
+
+.info-input-headline {
+  font-size: 17px;
+  font-weight: 600;
+  margin-top: 15px;
 }
 
 /* sendボタン */

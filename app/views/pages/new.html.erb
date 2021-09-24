@@ -4,12 +4,16 @@
   </header>
   <div class="page-spots-main">
     <h2 class="page-spots-title">コースを記録</h2>
+    <p class="caution">
+      ※がある部分は必須項目です
+    </p>
     <%= form_with(model: @page, local: true ) do |f| %>
       <%= render 'shared/error_messages', model: f.object %>
-      
+
       <%# pageテーブル保存したい %>
+      <h3 class="info-input-headline">ページ情報</h3>
       <div class="field">
-        <%= f.text_field :page_title, class:"input-default", id:"page-name", placeholder:"ページタイトルは？", maxlength:"40" %>
+        <%= f.text_field :page_title, class:"input-default", id:"page-name", placeholder:"※ ページタイトルは？", maxlength:"40" %>
       </div>
       <div class="field">
         <%= f.text_field :page_comment, class:"input-default", id:"page-comment", placeholder:"どんなコースかひとことでどうぞ！", maxlength:"40" %>
@@ -18,9 +22,9 @@
 
       <%# ページのメイン部分 %>
       <div class='spot-form'>
-        <h1 class='info-input-headline'>
-          コース
-        </h1>
+        <h3 class='info-input-headline'>
+          スポット情報
+        </h3>
 
         <%# spotテーブル %>
         <div id="spots">
@@ -29,6 +33,7 @@
 
             <div id="detail-association-insertion-point"></div>
           <% end %>
+
 
             <%= link_to_add_association "スポット追加", f, :spots,
               partial: 'pages/page_spot_fields',
