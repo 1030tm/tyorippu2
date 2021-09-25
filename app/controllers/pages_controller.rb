@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
 
   def index
-    @pages = Page.all
+    @pages = Page.order('created_at DESC').limit(3)
   end
 
   def new
@@ -16,6 +16,10 @@ class PagesController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show
+    @pages = Page.includes(:spots)
   end
 
   private

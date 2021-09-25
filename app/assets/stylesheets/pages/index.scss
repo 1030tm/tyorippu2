@@ -72,6 +72,8 @@ a {
   width: 37vh;
   padding: 1vw;
   background-color: #FFF;
+  border: thick double #87cefa ;
+  margin-right: 35px;
 }
 
 
@@ -91,6 +93,7 @@ a {
   padding: 1vw;
   display: flex;
   justify-content: center;
+  flex-direction: column;
 }
 
 .page-name {

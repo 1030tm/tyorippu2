@@ -1,0 +1,31 @@
+<%= render "shared/header" %>
+<div class="main">
+
+  <div class="page-show-contents">
+    <% @pages.each do |page| %>
+      <%# ページ情報部分 %>
+      <div class="page-top-contents">
+        <h2 class="page-title">
+          <%= page.page_title %>
+        </h2>
+        <div class="page-comment">
+          <%= page.page_comment %>
+        </div>
+      </div>
+      <%# ページ情報部分 %>
+
+      <%# スポット情報部分 %>
+      <div class="spot-contents">
+      <% page.spots.each do |spot| %>
+        <div class="spot-box">
+          <%= spot.spot_name %>
+          <%= spot.spot_address %>
+          <%= spot.spot_tel %>
+          <%= spot.spot_parking %>
+          <%= spot.spot_comment %>
+        </div>
+      <% end %>
+      <%# スポット情報部分 %>
+    <% end %>
+  </div>
+</div>
