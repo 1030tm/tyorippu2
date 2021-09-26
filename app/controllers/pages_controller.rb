@@ -19,7 +19,13 @@ class PagesController < ApplicationController
   end
 
   def show
-    @pages = Page.includes(:spots)
+    @page = Page.where(id: params[:id])
+  end
+
+  def destroy
+    @page = Page.find(params[:id])
+    @page.destroy
+    redirect_to root_path
   end
 
   private

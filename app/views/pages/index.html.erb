@@ -27,7 +27,7 @@
       <%# 投稿内容 %>
       <% @pages.each do |page| %>
       <li class='list'>
-        <%= link_to '#' do %>
+        <%= link_to page_path(page.id) do %>
         <div class='page-spot-img-content'>
           <%= image_tag "sky1.png", class: "page-img" %>
         </div>
@@ -83,4 +83,4 @@
 <% end %>
 <%# 投稿ボタン %>
 
-
+<%= render "shared/footer" %>
