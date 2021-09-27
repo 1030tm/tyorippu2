@@ -1,0 +1,92 @@
+/*========= バー表示のためのCSS ===============*/
+
+/*タイムライン全体の設定*/
+.timeline{
+  max-width: 400px;
+  width:100%;
+  margin:50px auto;
+  padding:0 30px;
+}
+
+.timeline li{
+    /*線の起点とするためrelativeを設定*/
+    position: relative;
+  list-style: none;
+  padding:0 0 20px 0;
+}
+
+.spot-box {
+  margin:0 0 20px 3em;
+}
+
+.show-spot-name {
+  display: block;
+  padding:10px 0;
+  font-weight: bold;
+}
+
+/*絶対配置で線を設定*/
+.border-line {
+    /*線の位置*/
+  position: absolute;
+  left:0.2em;
+  top:0;
+  width:2px;/*線の太さ*/
+  height:0;/*はじめは高さを0に*/
+  background: #ccc;
+}
+
+/*タイムラインの見出し横の丸の位置と形状*/
+.timeline li::after{
+  content:'';
+  position: absolute;
+  top:0;
+  left:0;
+  width:10px;
+  height: 10px;
+  background:#666;
+  border-radius: 50%;
+}
+
+
+/*========= レイアウトのためのCSS ===============*/
+
+.show-page-title, .show-page-comment {
+  font-size:1.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 20px;
+  color: rgb(187, 198, 206);
+}
+
+.delete-btn, .rewrite-btn {
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'TsukuARdGothic-Regular';
+}
+
+.spot-box {
+  position: relative;
+  display: inline-block;
+  margin: 1.5em 0 1.5em 15px;
+  padding: 7px 10px;
+  min-width: 120px;
+  max-width: 100%;
+  color: aquamarine;
+  font-size: 16px;
+  background: beige;
+  border-radius: 15px;
+}
+
+.spot-box:before {
+  content: "";
+  position: absolute;
+  top: 20%;
+  left: -30px;
+  margin-top: -20px;
+  border: 15px solid transparent;
+  border-right: 15px solid aquamarine;
+}
+
+
+

@@ -1,4 +1,4 @@
-<%= render "shared/second-header" %>
+<%= render "shared/second_header" %>
 <div class="main">
 
   <div class="page-show-contents">
@@ -6,10 +6,10 @@
     <% @page.each do |page| %>
       <%# ページ情報部分 %>
       <div class="page-top-contents">
-        <h2 class="page-title">
+        <h2 class="show-page-title">
           <%= page.page_title %>
         </h2>
-        <div class="page-comment">
+        <div class="show-page-comment">
           <%= page.page_comment %>
         </div>
 
@@ -17,21 +17,36 @@
         <div class="delete-btn">
           <%= link_to "削除", page_path, method: :delete, class: "page-destroy" %>
         </div>
+
+        <%# 編集ボタン %>
+        <div class="rewrite-btn">
+          <%= link_to "編集", edit_page_path, method: :get, class: "page-edit" %>
+        </div>
       </div>
       <%# ページ情報部分 %>
 
       <%# スポット情報部分 %>
-      <div class="spot-contents">
-      <% page.spots.each do |spot| %>
-        <div class="spot-box">
-          <%= spot.spot_name %><br>
-          <%= spot.spot_address %><br>
-          <%= spot.spot_tel %><br>
-          <%= spot.spot_parking %><br>
-          <%= spot.spot_comment %>
+      <ul class="timeline">
+        <div class="spot-contents">
+          <% page.spots.each do |spot| %>
+          <li>
+            <div class="spot-box">
+              <div class="show-spot-name">
+                <%= spot.spot_name %><br>
+              </div>
+              <%= spot.spot_address %><br>
+              <%= spot.spot_tel %><br>
+              <%= spot.spot_parking %><br>
+              <%= spot.spot_comment %>
+            </div>
+            <span class="border-line"></span>
+          </li>
+          <% end %>
         </div>
-      <% end %>
+        </ul>
       <%# スポット情報部分 %>
     <% end %>
   </div>
 </div>
+
+<script src="timeline.js"></script>

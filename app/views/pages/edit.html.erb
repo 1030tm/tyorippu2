@@ -1,0 +1,51 @@
+<%= render "shared/second_header" %>
+<div class='main'>
+
+  <div class="page-spots-contents">
+
+    <%= form_with(model: @page, url: page_path, method: :patch, local: true ) do |f| %>
+      <%= render 'shared/error_messages', model: @page %>
+      
+      <%# ページ情報部分 %>
+      <h3 class="info-input-headline">ページ情報</h3>
+          <div class="field">
+            <%= f.text_field :page_title, class:"input-default", id:"page-name", placeholder:"※ ページタイトルは？", maxlength:"40" %>
+          </div>
+          <div class="field">
+            <%= f.text_field :page_comment, class:"input-default", id:"page-comment", placeholder:"どんなコースかひとことでどうぞ！", maxlength:"40" %>
+          </div>
+      <%# ページ情報部分 %>
+
+      <%# スポット情報 %>
+      <div class='spot-form'>
+        <h3 class='info-input-headline'>
+          スポット情報
+        </h3>
+        <div id="spots">
+          <%= f.fields_for :spots do |spot| %>
+            <%= render 'pages/page_spot_fields', f: spot %>
+
+            <div id="detail-association-insertion-point"></div>
+          <% end %>
+
+
+            <%= link_to_add_association "スポット追加", f, :spots,
+              partial: 'pages/page_spot_fields',
+              class:"btn btn-default",
+              data: {
+                association_insertion_node: '#detail-association-insertion-point',
+                association_insertion_method: 'after'
+              }
+            %>
+        </div>
+      </div>
+      <%# スポット情報 %>
+
+      <%# 更新ボタン %>
+      <div class="rewrite-btn">
+        <%= f.submit "Rewrite", class:"submit-send-btn" %>
+      </div>
+      <%# 更新ボタン %>
+    <% end %>
+  </div>
+</div>
