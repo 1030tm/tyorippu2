@@ -5,13 +5,20 @@
 
     <% @page.each do |page| %>
       <%# ページ情報部分 %>
-      <div class="page-top-contents">
+      <div class="page-top-contents-left">
         <h2 class="show-page-title">
           <%= page.page_title %>
         </h2>
         <div class="show-page-comment">
           <%= page.page_comment %>
         </div>
+      </div>
+
+      <div class="page-top-contents-right">
+        <div class="page-user">
+          <%= page.user[:nickname] %>
+        </div>
+      </div>
 
         <%# 削除ボタン %>
         <div class="delete-btn">
@@ -22,7 +29,6 @@
         <div class="rewrite-btn">
           <%= link_to "編集", edit_page_path, method: :get, class: "page-edit" %>
         </div>
-      </div>
       <%# ページ情報部分 %>
 
       <%# スポット情報部分 %>
