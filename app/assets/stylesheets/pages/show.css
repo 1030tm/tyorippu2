@@ -15,8 +15,8 @@
   padding:0 0 20px 0;
 }
 
-.spot-box {
-  margin:0 0 20px 3em;
+.timeline dl{
+	margin:0 0 20px 3em;
 }
 
 .show-spot-name {
@@ -52,12 +52,19 @@
 /*========= レイアウトのためのCSS ===============*/
 
 .show-page-title, .show-page-comment {
-  font-size:1.5rem;
+  font-size:27px;
   text-align: center;
   text-transform: uppercase;
   padding: 20px;
-  color: rgb(187, 198, 206);
+  color: #696969;
+  font-family: 'TsukuARdGothic-Regular';
+  font-weight: bold;
 }
+
+.show-page-comment {
+  font-size: 15px;
+}
+
 
 .delete-btn, .rewrite-btn {
   text-align: center;
@@ -68,13 +75,13 @@
 .spot-box {
   position: relative;
   display: inline-block;
-  margin: 1.5em 0 1.5em 15px;
+  margin: -20px 3px 1.5em 40px;
   padding: 7px 10px;
   min-width: 120px;
   max-width: 100%;
-  color: aquamarine;
+  color: #696969;
   font-size: 16px;
-  background: beige;
+  background: #f0f8ff;
   border-radius: 15px;
 }
 
@@ -85,7 +92,7 @@
   left: -30px;
   margin-top: -20px;
   border: 15px solid transparent;
-  border-right: 15px solid aquamarine;
+  border-right: 15px solid #f0f8ff;
 }
 
 .page-top-contents-right {

@@ -36,6 +36,7 @@
         <div class="spot-contents">
           <% page.spots.each do |spot| %>
           <li>
+            <dl>
             <div class="spot-box">
               <div class="show-spot-name">
                 <%= spot.spot_name %><br>
@@ -45,6 +46,7 @@
               <%= spot.spot_parking %><br>
               <%= spot.spot_comment %>
             </div>
+            </dl>
             <span class="border-line"></span>
           </li>
           <% end %>
@@ -54,5 +56,3 @@
     <% end %>
   </div>
 </div>
-
-<script src="timeline.js"></script>

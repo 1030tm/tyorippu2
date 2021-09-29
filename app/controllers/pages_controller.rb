@@ -3,7 +3,7 @@ class PagesController < ApplicationController
 
 
   def index
-    @pages = Page.order('created_at DESC').limit(3)
+    @pages = Page.order('created_at DESC')
   end
 
   def new

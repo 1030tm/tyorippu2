@@ -1,39 +1,38 @@
 // 参照URL https://coco-factory.jp/ugokuweb/move01/9-1-6/
 
-// 線が伸びるための設定
+//線が伸びるための設定を関数でまとめる
 function ScrollTimelineAnime(){
-  $('.timeline li').each(function(){
+  $('.timeline li').each(function(){// それぞれのli要素の
+    let elemPos = $(this).offset().top;// 上からの高さ取得
+    let scroll = $(window).scrollTop();// スクロール値取得
+    let windowHeight = $(window).height();// windowの高さ取得
+    let startPoint = 0; //線をスタートさせる位置を指定※レイアウトによって調整してください
 
-    // 値を取得
-    const elemPos = $(this).offset().top; // li要素の上からの高さ取得
-    const scroll = $(window).scrollTop(); // スクロール値を取得
-    const windowHeight = $(window).height(); // windowの高さ取得
-    const startPoint = 100; // 線のスタート位置指定
-    
-    // 関数
-    if(scroll >= elemPos - windowHeight - startPoint){
-      const H = $(this).outerHeight(true) // liの余白と高さを含めた数値取得
-      // スクロール値から要素までの高さを引いた値を、liの高さの半分の％で出す
-      var percent = (scroll+startPoint-elemPos)/(H/2)*100; // liの余白と高さの半分で線を100％に伸ばす
+    if (scroll >= elemPos - windowHeight-startPoint){       
+      let H = $(this).outerHeight(true)//liの余白と高さを含めた数値を取得
+      //スクロール値から要素までの高さを引いた値を、liの高さの半分のパーセントで出す
+      let percent = (scroll+startPoint - elemPos) / (H/2) * 100;//liの余白と高さの半分で線を100％に伸ばす
 
-      // 100%を超えたらずっと100%を入れ続ける
-      if(percent > 100){
-        percent = 100;
+      // 100% を超えたらずっと100%を入れ続ける
+      if(percent  > 100 || 0 > percent){
+        percent  = 100;
       }
 
+      console.log(percent);
       // ボーダーの長さをセット
       $(this).children('.border-line').css({
-        height:percent+"%", //cssでパーセント指定
+        height: percent + "%", //CSSでパーセント指定
       });
-    }
+    } 
   });
 }
 
-// 画面をスクロールすると線が伸びるようにする
-// $(window).on('scroll', function(){
-//   ScrollTimelineAnime();
-// });
-
-$(window).on('load', function(){
-  ScrollTimelineAnime();
+// 画面をスクロールをしたら動かしたい場合の記述
+$(window).on('scroll', function(){
+  ScrollTimelineAnime();// 線が伸びる関数を呼ぶ
 });
+
+// ページが読み込まれたらすぐに動かしたい場合の記述
+//$(window).on('load', function(){
+//  ScrollTimelineAnime();// 線が伸びる関数を呼ぶ
+//});
