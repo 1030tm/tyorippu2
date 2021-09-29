@@ -1,0 +1,66 @@
+<div class="head-contents">
+  <%= link_to root_path do %>
+    <%= image_tag "sun.png", class: "sun-img" %>
+  <% end %>
+</div>
+<div class="main">
+  <div class="page-show-contents">
+
+    <% @page.each do |page| %>
+      <%# ページ情報部分 %>
+      <div class="page-top-contents-left">
+        <h2 class="show-page-title">
+          <%= page.page_title %>
+        </h2>
+        <div class="show-page-comment">
+          <%= page.page_comment %>
+        </div>
+      </div>
+
+      <div class="page-top-contents-right">
+        <div class="page-user">
+          <%= page.user[:nickname] %>
+        </div>
+      </div>
+
+        <%# 削除ボタン %>
+        <div class="delete-btn">
+          <%= link_to "削除", page_path, method: :delete, class: "page-destroy" %>
+        </div>
+
+        <%# 編集ボタン %>
+        <div class="rewrite-btn">
+          <%= link_to "編集", edit_page_path, method: :get, class: "page-edit" %>
+        </div>
+      <%# ページ情報部分 %>
+
+      <%# スポット情報部分 %>
+      <ul class="timeline">
+        <div class="spot-contents">
+          <% page.spots.each do |spot| %>
+          <li>
+            <dl>
+            <div class="spot-box">
+              <div class="show-spot-name">
+                <%= spot.spot_name %><br>
+              </div>
+              <%= spot.spot_address %><br>
+              <%= spot.spot_tel %><br>
+              <%= spot.spot_parking %><br>
+              <%= spot.spot_comment %>
+            </div>
+            </dl>
+            <span class="border-line"></span>
+          </li>
+          <% end %>
+        </div>
+        </ul>
+      <%# スポット情報部分 %>
+    <% end %>
+  </div>
+</div>
+<div class="foot-contents">
+  <%= link_to root_path do %>
+    <div class="caption">TOP PAGE</div>
+  <% end %>
+</div>

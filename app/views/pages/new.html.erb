@@ -1,0 +1,54 @@
+<div class="page-spots-contents">
+  <header class="page-spots-header">
+    <%= link_to image_tag('tyorippu_logo.png', size: '100x80'), root_path %>
+  </header>
+  <div class="page-spots-main">
+    <h2 class="page-spots-title">コースを記録</h2>
+    <p class="caution">
+      ※がある部分は必須項目です
+    </p>
+    <%= form_with(model: @page, local: true ) do |f| %>
+      <%= render 'shared/error_messages', model: f.object %>
+
+      <%# pageテーブル保存したい %>
+      <h3 class="info-input-headline">ページ情報</h3>
+      <div class="field">
+        <%= f.text_field :page_title, class:"input-default", id:"page-name", placeholder:"※ ページタイトルは？", maxlength:"40" %>
+      </div>
+      <div class="field">
+        <%= f.text_field :page_comment, class:"input-default", id:"page-comment", placeholder:"どんなコースかひとことでどうぞ！", maxlength:"40" %>
+      </div>
+      <%# pageテーブル保存したい %>
+
+      <%# ページのメイン部分 %>
+      <div class='spot-form'>
+        <h3 class='info-input-headline'>
+          スポット情報
+        </h3>
+
+        <%# spotテーブル %>
+        <div id="spots">
+          <%= f.fields_for :spots do |spot| %>
+            <%= render 'pages/page_spot_fields', f: spot %>
+
+            <div id="detail-association-insertion-point"></div>
+          <% end %>
+
+
+            <%= link_to_add_association "スポット追加", f, :spots,
+              partial: 'pages/page_spot_fields',
+              class:"btn btn-default",
+              data: {
+                association_insertion_node: '#detail-association-insertion-point',
+                association_insertion_method: 'after'
+              }
+            %>
+        </div>
+        <%# spotテーブル %>
+      
+        <%# 送信ボタン %>
+        <%= f.submit "Send", class:"submit-send-btn" %>
+    <% end %>
+        <%# 送信ボタン %>
+      <%# ページのメイン部分 %>
+</div>
