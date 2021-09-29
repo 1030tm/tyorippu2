@@ -1,6 +1,9 @@
-<%= render "shared/second_header" %>
+<div class="head-contents">
+  <%= link_to root_path do %>
+    <%= image_tag "sun.png", class: "sun-img" %>
+  <% end %>
+</div>
 <div class="main">
-
   <div class="page-show-contents">
 
     <% @page.each do |page| %>
@@ -55,4 +58,9 @@
       <%# スポット情報部分 %>
     <% end %>
   </div>
+</div>
+<div class="foot-contents">
+  <%= link_to root_path do %>
+    <div class="caption">TOP PAGE</div>
+  <% end %>
 </div>

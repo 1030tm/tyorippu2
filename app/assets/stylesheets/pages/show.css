@@ -50,15 +50,42 @@
 
 
 /*========= レイアウトのためのCSS ===============*/
+.head-contents {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.sun-img {
+  width: 30vw;
+  height: 20vh;
+}
+
+.page-show-contents {
+  width: 70vw;
+  font-family: 'TsukuARdGothic-Regular';
+  margin: 0 auto 5vh auto;
+  border: 3px solid #a0d8ef;
+}
 
 .show-page-title, .show-page-comment {
   font-size:27px;
   text-align: center;
-  text-transform: uppercase;
   padding: 20px;
   color: #696969;
-  font-family: 'TsukuARdGothic-Regular';
   font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.show-page-title::before, 
+.show-page-title::after {
+  content: "";
+  width: 30px;
+  height: 3px;
+  background-color: #00bfff;
+  margin: 0 20px;
 }
 
 .show-page-comment {
@@ -68,6 +95,7 @@
 
 .delete-btn, .rewrite-btn {
   text-align: center;
+  margin-left: 300px;
   text-transform: uppercase;
   font-family: 'TsukuARdGothic-Regular';
 }
@@ -83,6 +111,7 @@
   font-size: 16px;
   background: #f0f8ff;
   border-radius: 15px;
+  box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.5);
 }
 
 .spot-box:before {
@@ -100,5 +129,11 @@
   color: black;
 }
 
-
+.foot-contents {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-family: 'TsukuARdGothic-Regular';
+  
+}
 
