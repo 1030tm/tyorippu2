@@ -18,7 +18,6 @@ function ScrollTimelineAnime(){
         percent  = 100;
       }
 
-      console.log(percent);
       // ボーダーの長さをセット
       $(this).children('.border-line').css({
         height: percent + "%", //CSSでパーセント指定

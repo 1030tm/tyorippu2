@@ -25,8 +25,9 @@
           <%= f.fields_for :spots do |spot| %>
             <%= render 'pages/page_spot_fields', f: spot %>
 
-            <div id="detail-association-insertion-point"></div>
           <% end %>
+
+          <div id="detail-association-insertion-point"></div>
 
 
             <%= link_to_add_association "スポット追加", f, :spots,
@@ -34,7 +35,7 @@
               class:"btn btn-default",
               data: {
                 association_insertion_node: '#detail-association-insertion-point',
-                association_insertion_method: 'after'
+                association_insertion_method: 'append'
               }
             %>
         </div>
