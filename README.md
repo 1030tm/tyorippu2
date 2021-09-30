@@ -124,6 +124,7 @@ https://i.gyazo.com/6aec6c327b7493028c0b144ea953ec5d.png
 
 - belongs_to :user
 - has_many :spots
+- has_many :likes
 
 ## spots テーブル
 
@@ -153,7 +154,7 @@ https://i.gyazo.com/6aec6c327b7493028c0b144ea953ec5d.png
 ### Association
 
 - belongs_to :user
-- belongs_to :like
+- belongs_to :page
 
 # ローカルでの動作方法
 未実装
