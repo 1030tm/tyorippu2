@@ -125,8 +125,15 @@
 }
 
 .page-top-contents-right {
+  display: flex;
   text-align: center;
+  justify-content: center;
+  margin-bottom: 2vh;
   color: black;
+}
+
+.page-top-contents-right>.page-user {
+  margin-right: 0.5em;
 }
 
 .foot-contents {
