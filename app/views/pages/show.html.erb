@@ -15,14 +15,15 @@
         <div class="show-page-comment">
           <%= page.page_comment %>
         </div>
-        <div id='star_btn_<%= page.id %>', class='like'>
-          <%= render 'likes/like', page: page, likes: @likes %>
-        </div>
-      </div>
 
-      <div class="page-top-contents-right">
-        <div class="page-user">
-          <%= page.user[:nickname] %>
+        <div class="page-top-contents-right">
+          <div class="page-user">
+            <%= page.user[:nickname] %>
+          </div>
+        </div>
+
+        <div id='like_btn_<%= page.id %>', class='like'>
+          <%= render 'likes/like', page: page, likes: @likes %>
         </div>
       </div>
 
