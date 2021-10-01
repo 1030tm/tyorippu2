@@ -12,8 +12,8 @@ class LikesController < ApplicationController
   end
 
   private
+
   def set_page
     @page = Page.find(params[:page_id])
   end
-
 end

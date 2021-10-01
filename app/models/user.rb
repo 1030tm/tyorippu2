@@ -17,8 +17,7 @@ class User < ApplicationRecord
   has_many :pages
   has_many :likes, dependent: :destroy
 
-
   def already_liked?(page)
-    self.likes.exists?(page_id: page.id)
+    likes.exists?(page_id: page.id)
   end
 end

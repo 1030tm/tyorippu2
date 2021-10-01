@@ -21,7 +21,7 @@ RSpec.describe Page, type: :model do
       it 'userと紐づいていないと登録できない' do
         @page.user = nil
         @page.valid?
-        expect(@page.errors.full_messages).to include("User must exist")
+        expect(@page.errors.full_messages).to include('User must exist')
       end
     end
   end
