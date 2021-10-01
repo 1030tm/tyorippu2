@@ -35,7 +35,7 @@ RSpec.describe Spot, type: :model do
         @spot = FactoryBot.build(:spot, page_id: page.id)
         @spot.page_id = nil
         @spot.valid?
-        expect(@spot.errors.full_messages).to include("Page must exist")
+        expect(@spot.errors.full_messages).to include('Page must exist')
       end
     end
   end

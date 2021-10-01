@@ -13,4 +13,11 @@ class User < ApplicationRecord
 
   EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates_format_of :email, with: EMAIL_REGEX, message: 'には＠を含んでください'
+
+  has_many :pages
+  has_many :likes, dependent: :destroy
+
+  def already_liked?(page)
+    likes.exists?(page_id: page.id)
+  end
 end

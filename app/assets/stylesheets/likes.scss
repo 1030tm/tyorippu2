@@ -1,0 +1,28 @@
+body {
+  font-family: 'TsukuARdGothic-Regular';
+  .page-info {
+    a:link {
+      color: #6b6b6b;
+    }
+    a:visited {
+      color: #0073a8;
+    }
+    a:hover {
+      color: #fdd35c;
+    }
+  }
+}
+
+.fa-kiss {
+  height: 2vh;
+  width: 2vh;
+  margin-right: 0.5vw;
+  color: #808080;
+ }
+ 
+ .fa-kiss-wink-heart {
+  height: 2vh;
+  width: 2vh;
+  margin-right: 0.5vw;
+  color: #fdd35c;
+ }

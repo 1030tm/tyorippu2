@@ -6,4 +6,6 @@ class Page < ApplicationRecord
   validates :page_title, presence: true
 
   validates_associated :spots
+
+  has_many :likes, dependent: :destroy
 end
