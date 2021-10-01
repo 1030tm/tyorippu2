@@ -15,6 +15,9 @@
         <div class="show-page-comment">
           <%= page.page_comment %>
         </div>
+        <div id='star_btn_<%= page.id %>', class='like'>
+          <%= render 'likes/like', page: page, likes: @likes %>
+        </div>
       </div>
 
       <div class="page-top-contents-right">
@@ -23,6 +26,7 @@
         </div>
       </div>
 
+      <% if page.user_id == current_user.id %>
         <%# 削除ボタン %>
         <div class="delete-btn">
           <%= link_to "削除", page_path, method: :delete, class: "page-destroy" %>
@@ -32,6 +36,7 @@
         <div class="rewrite-btn">
           <%= link_to "編集", edit_page_path, method: :get, class: "page-edit" %>
         </div>
+      <% end %>
       <%# ページ情報部分 %>
 
       <%# スポット情報部分 %>
@@ -64,3 +69,9 @@
     <div class="caption">TOP PAGE</div>
   <% end %>
 </div>
+
+<script>
+$(".like").click(function(){
+    location.reload();
+})
+</script>

@@ -15,5 +15,10 @@ class User < ApplicationRecord
   validates_format_of :email, with: EMAIL_REGEX, message: 'には＠を含んでください'
 
   has_many :pages
-  has_many :likes
+  has_many :likes, dependent: :destroy
+
+
+  def already_liked?(page)
+    self.likes.exists?(page_id: page.id)
+  end
 end

@@ -3,7 +3,7 @@ class PagesController < ApplicationController
   before_action :set_page, only: [:destroy, :edit, :update]
 
   def index
-    @pages = Page.order('created_at DESC')
+    @pages = Page.order('created_at DESC').limit(3)
   end
 
   def new

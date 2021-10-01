@@ -38,10 +38,11 @@
             </h3>
             <div class='page-comment'>
               <span><%= page.page_comment %></span>
-              <%# <div class='star-btn'>
-                <%= image_tag "star.png", class:"star-icon" %>
-                <%# <span class='star-count'>0</span> %>
-              <%# </div> %>
+
+              <div id='like_btn_<%= page.id %>', class='like'>
+                <%= render 'likes/like', page: page, likes: @likes %>
+              </div>
+
             </div>
           </div>
         <% end %>
@@ -59,10 +60,6 @@
             </h3>
             <div class='page-comment'>
               <span>楽しい１日を！！</span>
-              <%# <div class='star-btn'>
-                <%= image_tag "star.png", class:"star-icon" %>
-                <%# <span class='star-count'>0</span> %>
-              <%# </div> %>
             </div>
           </div>
           <% end %>
@@ -84,3 +81,9 @@
 <%# 投稿ボタン %>
 
 <%= render "shared/footer" %>
+
+<script>
+$(".like").click(function(){
+    location.reload();
+})
+</script>

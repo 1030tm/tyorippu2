@@ -1,0 +1,16 @@
+<% if user_signed_in? %>
+  <% if current_user.already_liked?(page) %>
+    <%= link_to page_likes_path(page), method: :delete, remote: true, id: "unlike_btn" do %>
+      <i class="far fa-kiss-wink-heart unlike_btn"></i>
+    <% end %>
+    <%= page.likes.count %>
+  <% else %>
+    <%= link_to page_likes_path(page), method: :post, remote: true, id: "like_btn" do %>
+      <i class="far fa-kiss like_btn"></i>
+    <% end %>
+    <%= page.likes.count %>
+  <% end %>
+<% else %>
+  <i class="far fa-kiss"></i>
+  <%= page.likes.count %>
+<% end %>
