@@ -20,6 +20,9 @@
           <div class="page-user">
             <%= page.user[:nickname] %>
           </div>
+          <div class="updated">
+            <%= page.updated_at.strftime("%Y.%m.%d") %>
+          </div>
         </div>
 
         <div id='like_btn_<%= page.id %>', class='like'>
