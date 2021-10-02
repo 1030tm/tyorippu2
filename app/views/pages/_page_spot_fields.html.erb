@@ -7,6 +7,8 @@
     <%= f.text_area :spot_address, class:"input-default", id:"spot-address", placeholder:"※ 住所（都道府県は絶対に入力してください）" %>
   </div>
   <div class="field">
+    <%= f.collection_check_boxes :categories, class:"input-default", id:"spot-categories" %>
+  <div class="field">
     <%= f.text_field :spot_tel, class:"input-default", id:"spot-tel", placeholder:"電話番号" %>
   </div>
   <div class="field">
