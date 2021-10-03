@@ -44,7 +44,7 @@ class PagesController < ApplicationController
 
   def page_params
     params.require(:page).permit(:page_title, :page_comment,
-                                 spots_attributes: [:id, :spot_name, :spot_address, :spot_tel, :spot_parking, :spot_comment, :_destroy, :page_id]).merge(user_id: current_user.id)
+                                 spots_attributes: [:id, :spot_name, :spot_address, :spot_tel, :spot_parking, :spot_comment, :_destroy, :page_id, :category_id]).merge(user_id: current_user.id)
   end
 
   def set_page
