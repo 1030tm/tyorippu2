@@ -8,6 +8,4 @@ class Page < ApplicationRecord
   validates_associated :spots
 
   has_many :likes, dependent: :destroy
-
-  
 end

@@ -15,7 +15,7 @@ class Category < ActiveHash::Base
     { id: 12, name: '道の駅・PA' },
     { id: 13, name: '公園' },
     { id: 14, name: 'プラネタリウム' },
-    { id: 15, name: 'イベント・映画', }
+    { id: 15, name: 'イベント・映画' }
   ]
 
   include ActiveHash::Associations
