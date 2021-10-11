@@ -125,6 +125,8 @@ https://i.gyazo.com/6aec6c327b7493028c0b144ea953ec5d.png
 - belongs_to :user
 - has_many :spots
 - has_many :likes
+- has_many :page_tags
+- has_many :tags
 
 ## spots テーブル
 
@@ -135,8 +137,7 @@ https://i.gyazo.com/6aec6c327b7493028c0b144ea953ec5d.png
 | spot_tel           | string     | null: false                    |
 | spot_parking       | string     | null: false                    |
 | spot_comment       | text       |                                |
-| spot_url_sns       | text       |                                | カラムなし
-| spot_icon          | text       | null: false                    | カラムなし
+| category           | integer    | null: false, default: 0        |
 | spot_images        | text       | null: false                    | カラムなし
 | page               | references | null: false, foreign_key: true |
 
@@ -154,6 +155,29 @@ https://i.gyazo.com/6aec6c327b7493028c0b144ea953ec5d.png
 ### Association
 
 - belongs_to :user
+- belongs_to :page
+
+## tags テーブル
+
+| Column             | Type       | Option                         |
+| ------------------ | ---------- | ------------------------------ |
+| tag_name           | string     | null: false                    |
+
+### Association
+
+- has_many :page_tags
+- has_many :pages
+
+## page_tags テーブル
+
+| Column             | Type       | Option                         |
+| ------------------ | ---------- | ------------------------------ |
+| tag                | references | null: false, foreign_key: true |
+| page               | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :tag
 - belongs_to :page
 
 # ローカルでの動作方法
