@@ -28,6 +28,14 @@
         <div id='like_btn_<%= page.id %>', class='like'>
           <%= render 'likes/like', page: page, likes: @likes %>
         </div>
+
+        <%# タグ情報 %>
+        <div class="tag_lists">
+          <% page.page_tags.each do |tag| %>
+            <%= tag.tag_name %>
+          <% end %>
+        </div>
+        <%# タグ情報 %>
       </div>
 
       <div class="edit-btn">
@@ -59,10 +67,15 @@
               <div class="show-spot-name">
                 <%= spot.spot_name %><br>
               </div>
+              <i class="fas fa-map-marker-alt"></i>
               <%= spot.spot_address %><br>
+              <i class="far fa-bookmark"></i>
               <%= spot.category.name %><br>
+              <i class="fas fa-phone"></i>
               <%= spot.spot_tel %><br>
+              <i class="fas fa-parking"></i>
               <%= spot.spot_parking %><br>
+              <i class="far fa-comment"></i>
               <%= spot.spot_comment %>
             </div>
             </dl>

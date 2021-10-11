@@ -10,7 +10,7 @@
     <%= form_with(model: @page, local: true ) do |f| %>
       <%= render 'shared/error_messages', model: f.object %>
 
-      <%# pageテーブル保存したい %>
+      <%# page情報 %>
       <h3 class="info-input-headline">ページ情報</h3>
       <div class="field">
         <%= f.text_field :page_title, class:"input-default", id:"page-name", placeholder:"※ ページタイトルは？", maxlength:"40" %>
@@ -18,7 +18,15 @@
       <div class="field">
         <%= f.text_field :page_comment, class:"input-default", id:"page-comment", placeholder:"どんなコースかひとことでどうぞ！", maxlength:"40" %>
       </div>
-      <%# pageテーブル保存したい %>
+      <%# page情報 %>
+
+      <%# tag情報 %>
+      <div class="field">
+        <%= f.label "タグは(:)で区切ると複数タグ登録できます" %>
+        <%= f.text_field :tag_names, class:"input-default" %>
+      </div>
+
+      <%# tag情報 %>
 
       <%# ページのメイン部分 %>
       <div class='spot-form'>
