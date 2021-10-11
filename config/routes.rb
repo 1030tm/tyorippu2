@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :pages do
     resource :likes, only: [:create, :destroy]
   end
+
 end

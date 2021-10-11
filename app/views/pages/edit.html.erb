@@ -16,6 +16,13 @@
           </div>
       <%# ページ情報部分 %>
 
+      <%# タグ情報 %>
+      <div class="field">
+        <%= f.label "タグ (,)で区切ると複数タグ登録できます" %>
+        <%= f.text_field :tag_name, value: @tag_list, class:"input-default" %>
+      </div>
+      <%# タグ情報 %>
+
       <%# スポット情報 %>
       <div class='spot-form'>
         <h3 class='info-input-headline'>
