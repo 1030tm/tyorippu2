@@ -1,5 +1,6 @@
 a {
   text-decoration: none;
+  color: #6b6b6b;
 }
 
 .main {
@@ -99,6 +100,19 @@ a {
 .page-name {
   font-size: 2.5vh;
   font-weight: bold;
+}
+
+.page-info {
+  font-family: 'TsukuARdGothic-Regular';
+  a:link {
+    color: #6b6b6b;
+  }
+  a:visited {
+    color: #0073a8;
+  }
+  a:hover {
+    color: #fdd35c;
+  }
 }
 
 /* //投稿一覧 */
