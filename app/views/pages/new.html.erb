@@ -22,8 +22,9 @@
 
       <%# tag情報 %>
       <div class="field">
+        <%= f.label :tag_name, "タグ" %>
+        <%= f.text_field :tag_list, value: @page.tag_list, class:"input-default" %>
       </div>
-
       <%# tag情報 %>
 
       <%# ページのメイン部分 %>

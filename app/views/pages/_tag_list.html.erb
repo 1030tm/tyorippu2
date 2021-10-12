@@ -1,0 +1,4 @@
+<% tag_list.each do |tag| %>
+  <i class="fas fa-tag"></i>
+  <%= link_to tag, pages_path(tag_name: tag) %>
+<% end %>
