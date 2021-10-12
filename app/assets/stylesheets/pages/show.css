@@ -157,3 +157,13 @@
 .fa-tag {
   color: #a1d8e2;
 }
+
+a:link {
+  color: #6b6b6b;
+}
+a:visited {
+  color: #a4c1d7;
+}
+a:hover {
+  color: #fdd35c;
+}
