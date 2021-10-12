@@ -22,10 +22,9 @@
 
       <%# tag情報 %>
       <div class="field">
-        <%= f.label "タグは(:)で区切ると複数タグ登録できます" %>
-        <%= f.text_field :tag_names, class:"input-default" %>
+        <%= f.label :tag_list, "タグは半角スペースか（、）で区切ってください" %>
+        <%= f.text_field :tag_list, value: @page.tag_list, class:"input-default" %>
       </div>
-
       <%# tag情報 %>
 
       <%# ページのメイン部分 %>

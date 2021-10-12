@@ -148,3 +148,12 @@
   text-align: center;
 }
 
+.page-top-contents-left>.tag_lists {
+  text-align: center;
+  font-size: 13px;
+  
+}
+
+.fa-tag {
+  color: #a1d8e2;
+}

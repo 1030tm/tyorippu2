@@ -4,6 +4,9 @@ class PagesController < ApplicationController
 
   def index
     @pages = Page.order('created_at DESC').limit(3)
+    if params[:tag_name]
+      @pages = Page.tagged_with("#{params[:tag_name]}")
+    end
   end
 
   def new
@@ -43,7 +46,7 @@ class PagesController < ApplicationController
   private
 
   def page_params
-    params.require(:page).permit(:page_title, :page_comment,
+    params.require(:page).permit(:page_title, :page_comment, :tag_list,
                                  spots_attributes: [:id, :spot_name, :spot_address, :spot_tel, :spot_parking, :spot_comment, :_destroy, :page_id, :category_id]).merge(user_id: current_user.id)
   end
 
