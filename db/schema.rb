@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_02_074058) do
+ActiveRecord::Schema.define(version: 2021_10_11_132055) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -42,15 +42,6 @@ ActiveRecord::Schema.define(version: 2021_10_02_074058) do
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
-  create_table "page_tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "tag_id", null: false
-    t.bigint "page_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["page_id"], name: "index_page_tags_on_page_id"
-    t.index ["tag_id"], name: "index_page_tags_on_tag_id"
-  end
-
   create_table "pages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "page_title", null: false
     t.string "page_comment"
@@ -73,12 +64,6 @@ ActiveRecord::Schema.define(version: 2021_10_02_074058) do
     t.index ["page_id"], name: "index_spots_on_page_id"
   end
 
-  create_table "tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "tag_name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
     t.string "email", default: "", null: false
@@ -96,8 +81,6 @@ ActiveRecord::Schema.define(version: 2021_10_02_074058) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "likes", "pages"
   add_foreign_key "likes", "users"
-  add_foreign_key "page_tags", "pages"
-  add_foreign_key "page_tags", "tags"
   add_foreign_key "pages", "users"
   add_foreign_key "spots", "pages"
 end
